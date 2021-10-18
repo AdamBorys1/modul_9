@@ -16,6 +16,11 @@ class Card:
     def contact(self):
         print(f"Kontaktuje się z {self.name}, {self.position}, {self.email}")
 
+    @property
+    def name_length(self):
+        return (len(self.name) - 1)
+
+
 
 
 
@@ -30,7 +35,6 @@ card_list = []
 
 Card.contact(person_1)
 
-print(card_list)
 
-# sortowanie
-# 
+
+
