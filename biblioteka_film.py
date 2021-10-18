@@ -30,5 +30,16 @@ class Series:
 simpsons = Series(title="The Simpsons", year="1978", genre="Comedy", episode="03", season="02", number_of_plays=320)
 pulp_fiction = Film(title="Pulp Fiction", year="1994", genre="Crime", number_of_plays=472)
 
-simpsons.__str__()
-pulp_fiction.__str__()
+game_of_thrones = Series(title="Game Of Thrones", year="2010", genre="Fantasy", episode="07", season="05", number_of_plays=750)
+inception = Film(title="Inception", year="2016", genre="Sci-fi", number_of_plays=2517)
+
+list = [simpsons, pulp_fiction, game_of_thrones, inception]
+
+def get_movies():
+    for i in list:                                  # pokombinowac inaczej
+        if type(i) == "<class '__main__.Series'>":
+            print(f"Serial : {i}")
+        
+
+get_movies()
+
