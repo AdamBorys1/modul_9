@@ -27,12 +27,16 @@ person_1 = Card(name=fake.name(), surrname=fake.name(), company=fake.company(), 
 
 
 class BaseContact:
-    def __init__(self, name, phone_number, email):
+    def __init__(self, name, surrname, phone_number, email):
         self.name = name
         self.phone_number = phone_number
         self.email = email
+        self.surrname = surrname
     def contact(self):
-        return f"Wybieram numer {self.phone_number} i dzwonię do {self.name}"
+        print(f"Wybieram numer {self.phone_number} i dzwonię do {self.name} {self.surrname}")
+    @property
+    def label_length(self):
+        return (len(self.name) - 1)
 
 
 class BusinessContact(BaseContact):
@@ -42,10 +46,14 @@ class BusinessContact(BaseContact):
         self.company = company
         self.business_phone = business_phone
     def contact(self):
-        return f"Wybieram numer {self.business_phone} i dzwonię do {self.name}"
+        print(f"Wybieram numer {self.business_phone} i dzwonię do {self.name}")
+    @property
+    def label_length(self):
+        return (len(self.name) - 1)
 
 
-person_2 = BaseContact(name=fake.name(), phone_number=fake.phone_number(), email=fake.email())
-person_3 = BusinessContact(name=fake.name(), phone_number=fake.phone_number(), email=fake.email(), position=fake.job(), company=fake.company(), business_phone=fake.phone_number())
 
-contact(person_2)
+person_2 = BaseContact(name="Arek", surrname="Trzeciński", phone_number="634829517", email="a.trze@wp.pl")
+person_3 = BusinessContact(name="Arek", surrname="Trzeciński", phone_number="634829517", email="a.trze@wp.pl", position="kierownik", company="Genomed", business_phone="836027674")
+
+BaseContact.contact(person_2)
