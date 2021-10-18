@@ -11,10 +11,13 @@ class Card:
         self.email = email
 
     def __str__(self):
-        return f'{self.name} {self.company} {self.position} {self.email}'
+        return f'{self.name} {self.email}'
+
+    def contact(self):
+        print(f"Kontaktuje się z {self.name}, {self.position}, {self.email}")
 
 
-# dodac funkcje z modułu
+
 
 person_1 = Card(name=fake.name(), surrname=fake.name(), company=fake.company(), position=fake.job(), email=fake.email())
 person_2 = Card(name=fake.name(), surrname=fake.name(), company=fake.company(), position=fake.job(), email=fake.email())
@@ -22,6 +25,12 @@ person_3 = Card(name=fake.name(), surrname=fake.name(), company=fake.company(), 
 person_4 = Card(name=fake.name(), surrname=fake.name(), company=fake.company(), position=fake.job(), email=fake.email())
 person_5 = Card(name=fake.name(), surrname=fake.name(), company=fake.company(), position=fake.job(), email=fake.email())
 
+person_list = [person_1, person_2, person_3, person_4, person_5]
+card_list = []
 
-print(person_1.name, person_1.company, person_1.position, person_1.email)
-print(person_2)
+Card.contact(person_1)
+
+print(card_list)
+
+# sortowanie
+# 
