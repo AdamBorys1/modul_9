@@ -56,4 +56,16 @@ class BusinessContact(BaseContact):
 person_2 = BaseContact(name="Arek", surrname="Trzeciński", phone_number="634829517", email="a.trze@wp.pl")
 person_3 = BusinessContact(name="Arek", surrname="Trzeciński", phone_number="634829517", email="a.trze@wp.pl", position="kierownik", company="Genomed", business_phone="836027674")
 
-BaseContact.contact(person_2)
+
+
+
+def create_contacts(type, amount):
+    if type == "base":
+        for i in range(0, int(amount)):
+            contact = BaseContact(name=fake.first_name(), surrname="Buć", phone_number=fake.phone_number(), email=fake.email())
+            print(contact.name, contact.phone_number, contact.email)
+    if type == "business":
+        for i in range(0, int(amount)):
+            contact = BusinessContact(name=fake.first_name(), surrname="Buć", phone_number=fake.phone_number(), email=fake.email(), position=fake.job(), company=fake.company(), business_phone=fake.phone_number())
+            print(contact.name, contact.phone_number, contact.email, contact.position, contact.company, contact.business_phone)
+
