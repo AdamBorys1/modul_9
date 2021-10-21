@@ -16,17 +16,13 @@ class Film:
     __repr__ = __str__
 
 
-class Series:
-    def __init__(self, title, year, genre, episode, season, number_of_plays):
-        self.title = title
-        self.year = year
-        self.genre = genre
+class Series(Film):
+    def __init__(self, episode, season, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.episode = episode
         self.season = season
-        self.number_of_plays = number_of_plays
-
-    def play(self):
-        self.number_of_plays += 1
+        self.episode = episode
+        self.season = season
 
     def __str__(self):
         return f"{self.title} S{self.season}E{self.episode}"
@@ -87,6 +83,4 @@ def top_titles(number):
     for x in list:
         sorted_number_of_plays = sorted(list, key=lambda x:x.number_of_plays, reverse=True)
     print(sorted_number_of_plays[0:int(number)])
-
-
 
