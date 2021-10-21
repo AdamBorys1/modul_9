@@ -88,5 +88,5 @@ def top_titles(number):
         sorted_number_of_plays = sorted(list, key=lambda x:x.number_of_plays, reverse=True)
     print(sorted_number_of_plays[0:int(number)])
 
-top_titles(1)
+
 
